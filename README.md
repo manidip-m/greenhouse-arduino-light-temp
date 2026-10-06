@@ -14,7 +14,7 @@ The Arduino reads the temperature sensor (pin A1) and the LDR (pin A0) every 30 
 |---|---|
 | Light below 800 (raw) | Blue LED |
 | Light above 980 (raw) | Yellow LED |
-| Temperature below 20 °C | Blue LED |
+| Temperature below 20 °C | Green LED |
 | Temperature above 25 °C | Red LED |
 | Temperature above 30 °C | Buzzer (500 Hz) |
 
@@ -25,6 +25,35 @@ Light thresholds are raw analog readings (0–1023). Between 20 and 25 °C, whic
   </p>
 
 **Figure 1.** Arduino microcontroller designed using the Arduino student kit which was used to measure temperature and light intensity in the greenhouse.
+
+## Hardware
+
+### Components
+
+- Arduino UNO
+- LDR (light sensor)
+- MCP9700A temperature sensor
+- Blue LED (low light)
+- Yellow LED (high light)
+- Red LED (high temperature)
+- Green LED (low temperature)
+- Buzzer
+- Four 220 Ω resistors (one for each LED)
+- 10 kΩ resistor (connected with the LDR)
+
+### Pin connections
+
+| Pin | Connected to |
+|---|---|
+| A0 | LDR |
+| A1 | Temperature sensor |
+| D8 | Blue LED (low light) |
+| D9 | Yellow LED (high light) |
+| D10 | Red LED (high temperature) |
+| D11 | Buzzer |
+| D12 | Green LED (low temperature) |
+
+Each of the four LEDs is connected to the circuit through a 220 Ω resistor. The LDR is connected through a 10 kΩ resistor, which makes it sensitive to the light intensity.
 
 ## Repository structure
 

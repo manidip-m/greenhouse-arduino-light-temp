@@ -8,7 +8,7 @@ const int TEMP_SENSOR_PIN = A1; // Analog pin connected to MCP9700A-E/TO tempera
 const int LED_LOW_LIGHT = 8; // Blue LED for low light (cloudy condition)
 const int LED_HIGH_LIGHT = 9; // Yellow LED for high light (sunny condition)
 const int LED_HIGH_TEMP = 10; // Red LED for high temperature warning
-const int LED_LOW_TEMP = 12; // Blue LED for low temperature indication
+const int LED_LOW_TEMP = 12; // Green LED for low temperature indication
 const int BUZZER = 11; // Buzzer for high temperature alert
 
 // === Light Thresholds ===
@@ -16,7 +16,7 @@ const int LIGHT_LOW_THRESHOLD = 800; // Below this = cloudy (low light)
 const int LIGHT_HIGH_THRESHOLD = 980; // Above this = sunny (high light)
 
 // === Temperature Thresholds (in °C) ===
-const float TEMP_THRESHOLD_LOW = 20.0; // Below this = cold → blue LED ON
+const float TEMP_THRESHOLD_LOW = 20.0; // Below this = cold → green LED ON
 const float TEMP_THRESHOLD_LED = 25.0; // Above this = warm → red LED ON
 const float TEMP_THRESHOLD_BUZZER = 30.0; // Above this = hot → buzzer ON
 
@@ -70,10 +70,10 @@ void loop() {
 
   // === Temperature Alerts ===
   if (temperatureC < TEMP_THRESHOLD_LOW) {
-    // Too cold → turn on blue LED
+    // Too cold → turn on green LED
     digitalWrite(LED_LOW_TEMP, HIGH);
   } else {
-    // Normal/warm → turn off blue LED
+    // Normal/warm → turn off green LED
     digitalWrite(LED_LOW_TEMP, LOW);
   }
 
