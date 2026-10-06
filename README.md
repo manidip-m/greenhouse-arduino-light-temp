@@ -1,4 +1,4 @@
-# Greenhouse Light and Temperature Monitor (Arduino)
+# Arduino-based Greenhouse Microclimate Monitoring
 
 Here, I present a low-cost Arduino UNO system that measures temperature and light intensity inside a greenhouse, which was tested against the greenhouse's calibrated in-house sensors. 
 
