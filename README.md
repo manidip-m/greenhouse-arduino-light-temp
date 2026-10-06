@@ -1,10 +1,10 @@
 # Greenhouse Light and Temperature Monitor (Arduino)
 
-A low-cost Arduino UNO system that measures temperature and light intensity inside a greenhouse, tested against the greenhouse's calibrated in-house sensors. 
+Here, I present a low-cost Arduino UNO system that measures temperature and light intensity inside a greenhouse, which was tested against the greenhouse's calibrated in-house sensors. 
 
 ## Overview
 
-Greenhouses consume large amounts of energy, water and agrochemicals. Sensors and automation help monitor the greenhouse microclimate and optimise resource usage. This project explores the usability of an Arduino UNO with temperature sensor and light-dependent resistor (LDR) in a greenhouse, and compares its readings against calibrated, industrial in-house sensors.
+Greenhouses consume large amounts of energy, water and agrochemicals. Sensors and automation help monitor the greenhouse microclimate and optimise resource usage. This project explores the usability of an Arduino UNO with temperature sensor and light-dependent resistor (LDR) in a greenhouse, and compares its readings against a calibrated, industrial in-house sensors.
 
 ## How it works
 
@@ -43,7 +43,7 @@ Light thresholds are raw analog readings (0–1023). Between 20 and 25 °C, whic
 
 ## Getting started
 
-**Arduino.** Open `arduino/greenhouse_light_temp/greenhouse_light_temp.ino` in the Arduino IDE and upload it to an Arduino UNO wired as in Figure 1.
+**Arduino.** Open `arduino/greenhouse_light_temp/greenhouse_light_temp.ino` in the Arduino IDE and upload it to an Arduino UNO as in Figure 1.
 
 **Logging data.** Install the dependency and run the logger:
 
@@ -52,25 +52,25 @@ pip install -r python/requirements.txt
 python python/log_arduino_data.py
 ```
 
-Before running, set `SERIAL_PORT` in the script to your Arduino's serial port. The script appends the readings with a timestamp to `sensor_data.csv` in the `C:\DataLogs` folder and stops after 122 readings.
+Before running, set `SERIAL_PORT` in the script to your Arduino's serial port. The script appends the readings with a timestamp to `sensor_data.csv` in the `C:\DataLogs` folder and stops after 122 readings (This was specific to my study; you can set your data collection duration as per your requirement).
 
 ## Study design
 
-Data was collected from a greenhouse at the Rosemount Environmental Institute, UCD, Dublin, Ireland. The Arduino was placed on a table in a shaded area, away from direct sunlight, and recorded for one hour on each of three days (25, 26 and 27 February 2025) at 30 s intervals. The serial output was recorded on a laptop using the Python script in this repository.
+Data was collected from a greenhouse at the Rosemount Environmental Institute, UCD, Dublin, Ireland. The Arduino was placed on a table in a partially shaded area, away from direct sunlight, and recorded for one hour on each of three days (25, 26 and 27 February 2025) at 30 s intervals. The serial output was recorded on a laptop using the Python script in this repository.
 
   <p align="center">
     <img src="Images/fig2_device_setup_greenhouse.jpg" alt="Arduino temperature readings" width="600">
   </p>
 
-**Figure 2.** Device setup and data collection in greenhouse (left); Rosemount institute greenhouse (right). Arduino microcontroller was placed in a shaded area of the greenhouse, connected to the laptop, and the Python script was run to record data from the serial monitor.
+**Figure 2.** Device setup and data collection in the greenhouse. Arduino microcontroller was placed in a partially shaded area of the greenhouse, connected to the laptop, and the Python script was run to record data from the serial monitor.
 
-The Arduino readings were compared with data from sensors already installed in the greenhouse, which log temperature and light intensity once every 8 min. The in-house temperature sensor is a digital DHT-22. Because the LDR readings are raw values, they were converted to klux to match the in-house light meter. As the two systems log at different intervals, only the time points where the in-house sensor recorded data were matched for analysis. The data was analysed in Microsoft Excel, using Pearson's correlation coefficient to assess how similar the Arduino and in-house readings were.
+The Arduino readings were compared with data from sensors already installed in the greenhouse, which logs temperature and light intensity every 8 min. The in-house temperature sensor is a digital DHT-22. Because the LDR readings are raw values, they were converted to klux to match the in-house light meter. As the two systems log at different intervals, only the time points where the in-house sensor recorded data were matched for analysis. The data was analysed in Microsoft Excel, using Pearson's correlation coefficient to assess how similar the Arduino and in-house readings were.
 
 ## Results
 
 ### Temperature
 
-The highest temperature measured in the greenhouse was 30.1 °C on 25 February, a sunny day with no clouds. The lowest was 16.8 °C on 26 February, which was overcast. The temperature on 27 February was fairly stable.
+The highest temperature measured in the greenhouse was 30.1 °C on 25 February (clear and sunny day). The lowest was 16.8 °C on 26 February (overcast day). The temperature on 27 February was consistent.
 
 <p align="center">
     <img src="Images/fig3_arduino_temperature.jpg" alt="Arduino temperature readings" width="600">
@@ -84,9 +84,10 @@ The highest temperature measured in the greenhouse was 30.1 °C on 25 February, 
 
 **Figure 4.** Temperature readings from in-house sensor (measured every 8 min) showing the fluctuations in an hour inside the greenhouse over three consecutive days.
 
-The Arduino temperature readings fluctuated more than those of the in-house sensor, which is a digital DHT-22 that is more accurate and better housed in the sensor console. The large fluctuations in the Arduino readings are also attributed to the breadboard heating up in sunlight and to cool breezes entering the greenhouse. The temperature readings from the two systems were poorly correlated.
+The Arduino temperature readings fluctuated more than those of the in-house sensor, which is a digital DHT-22 that is more accurate and better housed in the sensor console. The large fluctuations in the Arduino readings are also due to the breadboard heating up in sunlight and to cool breezes entering the greenhouse. The temperature readings from the two systems were poorly correlated.
 
-<!-- Add Pearson's r for temperature: 25 Feb = ?, 26 Feb = ?, 27 Feb = ? -->
+Pearson’s correlation coefficient (r) for temperature readings was 0.43, 0.66, and 0.36 for 25th, 26th, and 27th February, respectively, indicating that the temperature
+readings from the two sensors were poorly correlated.
 
 ### Light intensity
 
@@ -106,7 +107,6 @@ The light intensity readings were mostly stable on 25 and 27 February. On 26 Feb
 
 The correlation values between the LDR and the in-house sensor varied widely, and most of the values obtained with the Arduino's LDR exceeded 95 klux, which is unrealistic.
 
-<!-- Add Pearson's r for light intensity: 25 Feb = ?, 26 Feb = ?, 27 Feb = ? -->
 
 ## Discussion
 
