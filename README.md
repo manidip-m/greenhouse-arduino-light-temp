@@ -208,7 +208,7 @@ Try it yourself with a raw reading of 153:
 
 ## Look closely at the data
 
-Open `data/arduino_readings_2025-02-26.csv`. Look at the temperature column. The values do not change smoothly: neighbouring values are always about 0.49 °C apart, for example 17.38, 17.87 and 18.36.
+Open `data/arduino_readings_2025-02-14.csv`. Look at the temperature column. The values do not change smoothly: neighbouring values are always about 0.49 °C apart, for example 17.38, 17.87 and 18.36.
 
 Why? One ADC step is about 4.9 mV, and the sensor gives 10 mV per degree, so one step is about 0.49 °C. The Arduino cannot see anything smaller than that. This is called the **resolution** of a measurement, and it is one reason why a sensor's readings can look jumpy.
 
@@ -216,7 +216,7 @@ Why? One ADC step is about 4.9 mV, and the sensor gives 10 mV per degree, so one
 
 ### Study design
 
-Data was collected from a greenhouse at the Rosemount Environmental Institute, UCD, Dublin, Ireland. The Arduino was placed on a table in a partially shaded area, away from direct sunlight, and recorded for one hour on each of three days (25, 26 and 27 February 2025) at 30 s intervals. The serial output was recorded on a laptop using the Python script in this repository.
+Data was collected from a greenhouse at the Rosemount Environmental Institute, UCD, Dublin, Ireland. The Arduino was placed on a table in a partially shaded area, away from direct sunlight, and recorded for one hour on each of three days (13, 14, and 15 February 2025) at 30 s intervals. The serial output was recorded on a laptop using the Python script in this repository.
 
   <p align="center">
     <img src="Images/fig2_device_setup_greenhouse.jpg" alt="Arduino temperature readings" width="600">
@@ -228,7 +228,7 @@ The Arduino readings were compared with data from sensors already installed in t
 
 ### Temperature results
 
-The highest temperature measured in the greenhouse was 30.1 °C on 25 February (clear and sunny day). The lowest was 16.8 °C on 26 February (overcast day). The temperature on 27 February was consistent.
+The highest temperature measured in the greenhouse was 30.1 °C on 13 February (clear and sunny day). The lowest was 16.8 °C on 14 February (overcast day). The temperature on 15 February was consistent.
 
 <p align="center">
     <img src="Images/fig3_arduino_temperature.jpg" alt="Arduino temperature readings" width="600">
@@ -244,11 +244,11 @@ The highest temperature measured in the greenhouse was 30.1 °C on 25 February (
 
 The Arduino temperature readings fluctuated more than those of the in-house sensor, which is a digital DHT-22 that is more accurate and better housed in the sensor console. The large fluctuations in the Arduino readings are also due to the breadboard heating up in sunlight and to cool breezes entering the greenhouse.
 
-Pearson’s correlation coefficient (r) for temperature readings was 0.43, 0.66, and 0.36 for 25th, 26th, and 27th February, respectively, indicating that the temperature readings from the two sensors were poorly correlated.
+Pearson’s correlation coefficient (r) for temperature readings was 0.43, 0.66, and 0.36 for 13th, 14th, and 15th February, respectively, indicating that the temperature readings from the two sensors were poorly correlated.
 
 ### Light results
 
-The light intensity readings were mostly stable on 25 and 27 February. On 26 February they fluctuated slightly because of overcast weather, which later gave way to partly cloudy conditions.
+The light intensity readings were mostly stable on 13 and 15 February. On 14 February they fluctuated slightly because of overcast weather, which later gave way to partly cloudy conditions.
 
 <p align="center">
     <img src="Images/fig5_arduino_light.jpg" alt="Arduino temperature readings" width="600">
@@ -292,14 +292,14 @@ Both suggested sensors are cheap and can be used with an Arduino, which would ma
 │   ├── log_arduino_data.py             Logs serial output to CSV
 │   └── requirements.txt
 ├── data/
-│   └── arduino_readings_2025-02-26.csv Arduino readings, 26 Feb 2025
+│   └── arduino_readings_2025-02-14.csv Arduino readings, 14 Feb 2025
 ├── Images/                             Figures used in this README
 └── README.md
 ```
 
 ## About the data
 
-`data/arduino_readings_2025-02-26.csv` contains the Arduino readings recorded on 26 February 2025, one of the three days in the study. The in-house sensor data and the other two days are not included in this repository.
+`data/arduino_readings_2025-02-14.csv` contains the Arduino readings recorded on 14 February 2025, one of the three days in the study. The in-house sensor data and the other two days are not included in this repository.
 
 ## References
 
