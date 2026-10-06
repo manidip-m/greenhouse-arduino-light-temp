@@ -21,7 +21,7 @@ The Arduino reads the temperature sensor (pin A1) and the LDR (pin A0) every 30 
 Light thresholds are raw analog readings (0–1023). Between 20 and 25 °C, which is ambient room temperature, no temperature indicator is switched on. A 0.1 s delay between the two sensor readings prevents them from interfering with each other.
 
   <p align="center">
-    <img src="images/fig1_arduino_circuit.jpg" alt="Arduino temperature readings" width="400">
+    <img src="Images/fig1_arduino_circuit.jpg" alt="Arduino temperature readings" width="400">
   </p>
 
 **Figure 1.** Arduino microcontroller designed using the Arduino student kit which was used to measure temperature and light intensity in the greenhouse.
@@ -37,7 +37,7 @@ Light thresholds are raw analog readings (0–1023). Between 20 and 25 °C, whic
 │   └── requirements.txt
 ├── data/
 │   └── arduino_readings_2025-02-26.csv Arduino readings, 26 Feb 2025
-├── images/                             Figures used in this README
+├── Images/                             Figures used in this README
 └── README.md
 ```
 
@@ -59,7 +59,7 @@ Before running, set `SERIAL_PORT` in the script to your Arduino's serial port. T
 Data was collected from a greenhouse at the Rosemount Environmental Institute, UCD, Dublin, Ireland. The Arduino was placed on a table in a shaded area, away from direct sunlight, and recorded for one hour on each of three days (25, 26 and 27 February 2025) at 30 s intervals. The serial output was recorded on a laptop using the Python script in this repository.
 
   <p align="center">
-    <img src="images/fig2_device_setup_greenhouse.jpg" alt="Arduino temperature readings" width="600">
+    <img src="Images/fig2_device_setup_greenhouse.jpg" alt="Arduino temperature readings" width="600">
   </p>
 
 **Figure 2.** Device setup and data collection in greenhouse (left); Rosemount institute greenhouse (right). Arduino microcontroller was placed in a shaded area of the greenhouse, connected to the laptop, and the Python script was run to record data from the serial monitor.
@@ -73,13 +73,13 @@ The Arduino readings were compared with data from sensors already installed in t
 The highest temperature measured in the greenhouse was 30.1 °C on 25 February, a sunny day with no clouds. The lowest was 16.8 °C on 26 February, which was overcast. The temperature on 27 February was fairly stable.
 
 <p align="center">
-    <img src="images/fig3_arduino_temperature.jpg" alt="Arduino temperature readings" width="600">
+    <img src="Images/fig3_arduino_temperature.jpg" alt="Arduino temperature readings" width="600">
   </p>
 
 **Figure 3.** Temperature readings from Arduino microcontroller (measured every 30 s) showing the fluctuations in an hour inside the greenhouse over three consecutive days.
 
 <p align="center">
-    <img src="images/fig4_inhouse_temperature.jpg" alt="Arduino temperature readings" width="600">
+    <img src="Images/fig4_inhouse_temperature.jpg" alt="Arduino temperature readings" width="600">
   </p>
 
 **Figure 4.** Temperature readings from in-house sensor (measured every 8 min) showing the fluctuations in an hour inside the greenhouse over three consecutive days.
@@ -93,13 +93,13 @@ The Arduino temperature readings fluctuated more than those of the in-house sens
 The light intensity readings were mostly stable on 25 and 27 February. On 26 February they fluctuated slightly because of overcast weather, which later gave way to partly cloudy conditions.
 
 <p align="center">
-    <img src="images/fig5_arduino_light.jpg" alt="Arduino temperature readings" width="600">
+    <img src="Images/fig5_arduino_light.jpg" alt="Arduino temperature readings" width="600">
   </p>
 
 **Figure 5.** Light intensity readings from Arduino microcontroller showing the fluctuations in an hour inside the greenhouse over three consecutive days.
 
 <p align="center">
-    <img src="images/fig6_inhouse_light.jpg" alt="Arduino temperature readings" width="600">
+    <img src="Images/fig6_inhouse_light.jpg" alt="Arduino temperature readings" width="600">
   </p>
 
 **Figure 6.** Light intensity readings from the in-house sensor showing the fluctuations in an hour inside the greenhouse over three consecutive days.
