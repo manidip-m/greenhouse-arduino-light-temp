@@ -22,9 +22,9 @@ A greenhouse gives plants a controlled environment, so they can grow independent
 
 This project explores the usability of an Arduino UNO with a basic temperature sensor and a light-dependent resistor (LDR) in a greenhouse, and compares its readings against calibrated, industrial in-house sensors.
 
-## Words you will meet
+## Defining some terms for better understanding
 
-| Word | What it means |
+| Term | What it means |
 |---|---|
 | Microcontroller | A tiny computer on a single chip. The Arduino UNO is a board built around one. |
 | Sensor | A part that measures something in the real world, such as light or temperature. |
