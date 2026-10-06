@@ -216,7 +216,7 @@ Why? One ADC step is about 4.9 mV, and the sensor gives 10 mV per degree, so one
 
 ### Study design
 
-Data was collected from a greenhouse at the Rosemount Environmental Institute, UCD, Dublin, Ireland. The Arduino was placed on a table in a partially shaded area, away from direct sunlight, and recorded for one hour on each of three days (25, 26 and 27 February 2025) at 30 s intervals. The serial output was recorded on a laptop using the Python script in this repository.
+Data was collected from a greenhouse at the Rosemount Environmental Institute, UCD, Dublin, Ireland. The Arduino was placed on a table in a partially shaded area, away from direct sunlight, and recorded for one hour on each of three days (25, 26, and 27 February 2025) at 30 s intervals. The serial output was recorded on a laptop using the Python script in this repository.
 
   <p align="center">
     <img src="Images/fig2_device_setup_greenhouse.jpg" alt="Arduino temperature readings" width="600">
